@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/quranIndexFragment">
+    <fragment
+        android:id="@+id/quranContainerFragment"
+        android:name="com.example.islamicapp.ui.quran.quranContainer.QuranContainerFragment"
+        android:label="fragment_quran_container"
+        tools:layout="@layout/fragment_quran_container" >
+        <argument
+            android:name="startPage"
+            app:argType="integer"
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/quranSearchFragment"
+        android:name="com.example.islamicapp.ui.quran.quranSearch.QuranSearchFragment"
+        android:label="fragment_quran_search"
+        tools:layout="@layout/fragment_quran_search" >
+        <action
+            android:id="@+id/action_quranSearchFragment_to_quranContainerFragment"
+            app:destination="@id/quranContainerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quranIndexFragment"
+        android:name="com.example.islamicapp.ui.quran.quranIndex.QuranIndexFragment"
+        android:label="fragment_quran_index"
+        tools:layout="@layout/fragment_quran_index" >
+        <action
+            android:id="@+id/action_quranIndexFragment_to_quranSearchFragment"
+            app:destination="@id/quranSearchFragment" />
+        <action
+            android:id="@+id/action_quranIndexFragment_to_quranContainerFragment"
+            app:destination="@id/quranContainerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarHomeFragment2"
+        android:name="com.example.islamicapp.ui.azkar.azkarHome.AzkarHomeFragment"
+        android:label="fragment_azkar_home"
+        tools:layout="@layout/fragment_azkar_home" >
+        <action
+            android:id="@+id/action_azkarHomeFragment2_to_azkarListFragment"
+            app:destination="@id/azkarListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/azkarListFragment"
+        android:name="com.example.islamicapp.ui.azkar.azkerList.AzkarListFragment"
+        android:label="fragment_azkar_list"
+        tools:layout="@layout/fragment_azkar_list" >
+        <argument
+            android:name="AzkerType"
+            app:argType="String"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/prayerTimesFragment"
+        android:name="com.example.islamicapp.ui.prayertimes.prayersTimesHome.PrayerTimesFragment"
+        android:label="fragment_prayer_times"
+        tools:layout="@layout/fragment_prayer_times" />
+</navigation>
